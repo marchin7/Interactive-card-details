@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Frontend Mentor | Interactive card details form</title>
+
+  <link rel="stylesheet" href="style.css">
+  <script src="index.js" defer></script>
+
+</head>
+<body>
+  <main>
+    <div class="cards-section" aria-hidden="true">
+      <div class="cards-container">
+        <div class="card-back">
+          <img class="card-back-img" src="images/bg-card-back.png" alt="" aria-hidden="true">
+
+          <div class="cvc-print" id="cvc-print">000</div>
+
+        </div>
+        <div class="card-front">
+          <img class="card-front-img" src="images/bg-card-front.png" alt="" aria-hidden="true">
+
+          <img class="card-logo" src="images/card-logo.svg" alt="" aria-hidden="true">
+          <div class="card-number-print" id="card-number-print">0000 0000 0000 0000</div>
+          <div class="cardholder-name-print" id="cardholder-name-print">JANE APPLESEED</div>
+          <div class="exp-date-print">
+            <span id="exp-date-month-print">00</span>/<span id="exp-date-year-print">00</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="form-section">
+      <form id="form">
+        <fieldset>
+          <legend class="sr-only">Enter card details</legend>
+          <label for="cardholder-name-input">cardholder name</label>
+          <input type="text" placeholder="e.g. Jane Appleseed" class="form-input" id="cardholder-name-input" maxlength="30">
+          <span class="form-error-msg">Can't be blank</span>
+          <label for="card-number-input">card number</label>
+          <input type="text" class="form-input" id="card-number-input" placeholder="e.g. 1234 5678 9123 0000" maxlength="19">
+          <span class="form-error-msg">Can't be blank</span>
+          <div class="exp-date-cvc-container">
+            <div class="exp-date">
+              <label for="exp-date-month-input">exp. date [mm/yy]</label>
+                <input type="text" class="form-input exp-date-month-input" id="exp-date-month-input" placeholder="MM" maxlength="2">
+                <input type="text" class="form-input exp-date-year-input" id="exp-date-year-input" placeholder="YY" maxlength="2">
+              <span class="form-error-msg" id="form-exp-date-error-msg">Can't be blank</span>
+            </div>
+            <div class="cvc">
+              <label for="cvc-input">CVC</label>
+                <input type="text" class="form-input" id="cvc-input" placeholder="e.g. 123" maxlength="3">
+              <span class="form-error-msg" id="error-msg-cvc">Can't be blank</span>
+            </div>
+          </div>
+          <input class="confirm-btn" type="submit" value="Confirm" id="confirm-btn">
+        </fieldset>
+      </form>
+      <section class="thank-section" id="thank-section">
+        <div class="thank-section-inner">
+          <img src="images/icon-complete.svg" alt="" aria-hidden="true">
+          <h1 class="thank-you-header">Thank you!</h1>
+          <p class="thank-you-paragraph">We've added your card details</p>
+          <button class="continue-btn" id="continue-btn">Continue</button>
+        </div>
+      </section>
+    </div>
+  </main>
+</body>
+</html>
+
+
+
+
+
+

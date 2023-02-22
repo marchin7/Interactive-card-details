@@ -1,0 +1,539 @@
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+}
+
+* {
+    margin: 0;
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+}
+
+img,
+picture,
+video,
+canvas,
+svg {
+    display: block;
+    max-width: 100%;
+    line-height: 0;
+}
+
+input,
+button,
+textarea,
+select {
+    font: inherit;
+}
+
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    overflow-wrap: break-word;
+}
+
+:root {
+    --Linear-gradient: linear-gradient(
+        to right,
+        hsl(249, 99%, 64%),
+        hsl(278, 52%, 56%)
+    );
+    --clr-Red: hsl(0, 100%, 66%);
+    --clr-White: hsl(0, 0%, 100%);
+    --clr-Light-grayish-violet: hsl(270, 3%, 87%);
+    --clr-Dark-grayish-violet: hsl(279, 6%, 55%);
+    --clr-Very-dark-violet: hsl(278, 68%, 11%);
+}
+
+body {
+    font-family: space Grotesk, sans-serif;
+    font-size: 1.125rem;
+    font-weight: 400;
+    min-height: 100vh;
+
+    background: url(images/bg-main-mobile.png);
+    background-repeat: no-repeat;
+    background-size: 100% 15rem;
+
+    display: flex;
+    justify-content: center;
+}
+
+.form-input {
+    height: 2.8125rem;
+    border: 0.0625rem solid;
+    border-color: var(--clr-Light-grayish-violet);
+    color: var(--clr-Very-dark-violet);
+    outline: none;
+    border-radius: 0.5rem;
+    padding: 0rem 1rem;
+    margin-top: 0.25rem;
+}
+
+input::placeholder {
+    color: var(--clr-Dark-grayish-violet);
+    opacity: 0.6;
+}
+
+.form-input.success {
+    border: 0.0625rem solid hsl(270, 3%, 87%);
+}
+
+.form-input:focus {
+    border: double 0.0625rem transparent;
+    border-radius: 0.375rem;
+    background-image: linear-gradient(white, white),
+        linear-gradient(to right, hsl(249, 99%, 64%), hsl(278, 52%, 56%));
+    background-origin: border-box;
+    background-clip: padding-box, border-box;
+}
+
+.form-input.error {
+    border: 0.0625rem solid hsl(0, 100%, 60%);
+}
+
+.cards-section,
+.form-section {
+    display: flex;
+    justify-content: center;
+}
+
+.card-back,
+.card-front {
+    position: relative;
+    width: 17.8125rem;
+    border-radius: 0.5625rem;
+    -webkit-box-shadow: 1.4375rem 1.1875rem 6.9375rem -1.125rem rgba(0, 0, 0, 0.15);
+    -moz-box-shadow: 1.4375rem 1.1875rem 6.9375rem -1.125rem rgba(0, 0, 0, 0.15);
+    box-shadow: 1.4375rem 1.1875rem 6.9375rem -1.125rem rgba(0, 0, 0, 0.15);
+}
+
+.card-front {
+    margin-top: -4.1875rem;
+}
+
+.card-logo {
+    position: absolute;
+    width: 3.25rem;
+    top: 1.25rem;
+    left: 1.25rem;
+}
+
+.card-number-print {
+    position: absolute;
+    font-size: 1.125rem;
+    letter-spacing: 0.125rem;
+    bottom: 2.8125rem;
+    left: 1.25rem;
+    color: var(--clr-White);
+}
+
+.cardholder-name-print {
+    position: absolute;
+    font-size: 0.625rem;
+    letter-spacing: 0.0625rem;
+    bottom: 1.125rem;
+    left: 1.25rem;
+    color: var(--clr-White);
+    text-transform: uppercase;
+}
+
+.exp-date-print {
+    position: absolute;
+    font-size: 0.625rem;
+    letter-spacing: 0.0625rem;
+    bottom: 1.125rem;
+    right: 1.25rem;
+    color: var(--clr-White);
+}
+
+.card-back {
+    margin-top: 2rem;
+    margin-left: 3.75rem;
+}
+
+.cvc-print {
+    position: absolute;
+    font-size: 0.625rem;
+    color: var(--clr-White);
+    letter-spacing: 0.0625rem;
+    font-weight: 400;
+    top: 4.3125rem;
+    right: 2.25rem;
+}
+
+form {
+    width: 23.4375rem;
+    display: block;
+    margin-top: 2rem;
+    animation-name: fade;
+    animation-duration: 2s;
+}
+
+form.hide {
+    display: none;
+}
+
+fieldset {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+    padding: 0;
+    border: none;
+    padding: 1.5rem;
+}
+
+.sr-only {
+    position: absolute !important;
+    width: 0.0625rem !important;
+    height: 0.0625rem !important;
+    padding: 0 !important;
+    margin: -0.0625rem !important;
+    overflow: hidden !important;
+    clip: rect(0, 0, 0, 0) !important;
+    border: 0 !important;
+}
+
+.exp-date-cvc-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: -0.25rem;
+}
+
+.cvc input {
+    width: 10.25rem;
+}
+
+.exp-date-month-input,
+.exp-date-year-input {
+    width: 4.5rem;
+}
+
+.exp-date-month-input {
+    margin-right: 0.25rem;
+}
+
+label {
+    text-transform: uppercase;
+    font-size: 13px;
+    letter-spacing: 0.125rem;
+    color: var(--clr-Very-dark-violet);
+    font-weight: 500;
+}
+
+.confirm-btn,
+.continue-btn {
+    height: 3.25rem;
+    font-size: 1.125rem;
+    background-color: var(--clr-Very-dark-violet);
+    color: var(--clr-White);
+    border-radius: 0.5rem;
+    border: none;
+    cursor: pointer;
+    transition: opacity 0.15s ease-in-out;
+    margin-top: 0.375rem;
+}
+
+.confirm-btn:hover,
+.continue-btn:hover {
+    opacity: 0.8;
+}
+
+.form-error-msg {
+    color: var(--clr-Red);
+    font-size: 0.6875rem;
+    margin-top: 0.25rem;
+    opacity: 0;
+}
+
+.form-error-msg.error {
+    opacity: 1;
+}
+
+.error-msg-cvc.error {
+    opacity: 1;
+}
+
+.thank-section {
+    display: none;
+    min-width: 23.4375rem;
+    margin-top: 2rem;
+}
+
+.thank-section.show {
+    display: block;
+}
+
+.thank-section-inner {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1.5625rem 1.5625rem 2.5rem 1.5625rem;
+}
+
+.thank-you-header {
+    text-transform: uppercase;
+    color: var(--clr-Very-dark-violet);
+    font-weight: normal;
+    font-size: 1.875rem;
+    letter-spacing: 0.125rem;
+    margin-top: 2rem;
+}
+
+.thank-you-paragraph {
+    color: var(--clr-Dark-grayish-violet);
+    font-size: 1.125rem;
+    margin-top: 0.625rem;
+    margin-bottom: 2.1875rem;
+}
+
+.continue-btn {
+    width: 100%;
+}
+
+@media only screen and (min-width: 37.5rem) {
+    body {
+        background-size: 100% 22.5rem;
+    }
+
+    form {
+        width: 26.875rem;
+    }
+
+    .exp-date-month-input,
+    .exp-date-year-input {
+        width: 5rem;
+    }
+
+    .cvc input {
+        width: 12rem;
+    }
+
+    .exp-date-month-input {
+        margin-right: 0.625rem;
+    }
+
+    form input {
+        margin-top: 0.4375rem;
+    }
+
+    .form-error-msg {
+        margin-bottom: 0.2813rem;
+    }
+
+    .confirm-btn {
+        margin-top: 0.875rem;
+    }
+
+    .exp-date-cvc-container {
+        margin-top: -0.4375rem;
+    }
+
+    .exp-date-cvc-container input {
+        margin-top: 0.3125rem !important;
+    }
+
+    .card-back,
+    .card-front {
+        width: 27.9375rem;
+    }
+
+    label {
+        font-weight: 600;
+    }
+
+    .card-logo {
+        width: auto;
+        top: 1.75rem;
+        left: 2rem;
+    }
+
+    .card-number-print {
+        font-size: 1.75rem;
+        letter-spacing: 0.2125rem;
+        bottom: 4.1875rem;
+        left: 2rem;
+    }
+
+    .cardholder-name-print {
+        font-size: 0.875rem;
+        letter-spacing: 0.125rem;
+        bottom: 1.5rem;
+        left: 2rem;
+    }
+
+    .exp-date-print {
+        font-size: 0.875rem;
+        letter-spacing: 0.125rem;
+        bottom: 1.5rem;
+        right: 2rem;
+    }
+
+    .card-back {
+        margin-top: 3rem;
+        margin-left: 5.375rem;
+    }
+
+    .cvc-print {
+        font-size: 0.875rem;
+        top: 6.875rem;
+        right: 3.5625rem;
+        letter-spacing: 0.125rem;
+    }
+
+    .card-front {
+        margin-top: -6.6875rem;
+    }
+}
+
+@media only screen and (min-width: 69.375rem) {
+    body {
+        background-image: url(images/bg-main-desktop.png);
+        background-size: 33.55% 100%;
+    }
+
+    main {
+        height: 100%;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        column-gap: 10rem;
+    }
+
+    .cards-container {
+        display: flex;
+        flex-direction: column-reverse;
+    }
+
+    .card-front {
+        margin-top: 0rem;
+        margin-right: 0rem;
+        transform: translateX(-8.5%);
+    }
+
+    .card-back {
+        margin-top: 2.3125rem;
+        margin-left: 0rem;
+        transform: translateX(12.5%);
+    }
+
+    .form-section {
+        padding-bottom: 0rem;
+    }
+
+    fieldset {
+        padding-bottom: 3.5rem;
+    }
+
+    .thank-section {
+        min-width: 26.875rem;
+    }
+}
+
+/* Screens < 370px */
+
+@media only screen and (max-width: 23.125rem) {
+    body {
+        background-size: 100% 12.5rem;
+    }
+
+    form {
+        min-width: 17.5rem;
+    }
+
+    .form-input {
+        font-size: 0.875rem;
+        padding: 0rem 0.75rem;
+    }
+
+    fieldset {
+        padding: 1rem;
+    }
+
+    .card-front,
+    .card-back {
+        width: 15.625rem;
+        margin: 0;
+    }
+
+    .card-back {
+        margin-left: 1.25rem;
+        margin-top: 1.25rem;
+    }
+
+    .card-front {
+        margin-top: -3.5rem;
+    }
+
+    .card-logo {
+        width: 2.5rem;
+        top: 0.875rem;
+        left: 0.875rem;
+    }
+
+    .card-number-print {
+        font-size: 1rem;
+        letter-spacing: 0.125rem;
+        bottom: 2.75rem;
+        left: 0.875rem;
+    }
+
+    .cardholder-name-print {
+        font-size: 0.5rem;
+        letter-spacing: 0.0938rem;
+        bottom: 1rem;
+        left: 0.875rem;
+    }
+
+    .exp-date-print {
+        font-size: 0.5rem;
+        letter-spacing: 0.0938rem;
+        bottom: 1rem;
+        right: 0.875rem;
+    }
+
+    .cvc-print {
+        font-size: 0.5rem;
+        top: 3.875rem;
+        right: 2rem;
+        letter-spacing: 0.0938rem;
+    }
+
+    .cvc {
+        margin-left: 0rem;
+    }
+
+    .cvc input {
+        width: 100%;
+        min-width: 6.25rem;
+    }
+
+    .exp-date-month-input,
+    .exp-date-year-input {
+        min-width: 3.375rem;
+        width: 3.375rem;
+    }
+
+    label {
+        font-size: 0.5rem;
+    }
+
+    .form-error-msg {
+        font-size: 0.5625rem;
+    }
+}
